@@ -1,0 +1,20 @@
+name = 'Tinlake'
+license = 'MIT'
+licenselink = 'https://github.com/owner/repo/LICENSE'
+description = 'Custom Hugo theme created for Tinlake based on: https://www.figma.com/design/UojlxpDmTPVELessLvRhY4/tinlake.com---Final?node-id=0-1&p=f&t=ahm7dfV9UuxoGgLW-0'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/owner/repo'
+
+# If you have a running demo of the theme
+demosite = 'https://owner.github.io/repo'
+
+# Taxonomy terms
+tags = ['black', 'lime', 'teal']
+features = ['responsive']
+
+# If the theme has multiple authors
+authors = [
+  {name = 'Jared Rigby', homepage = 'https://www.jaredrigby.co.uk'},
+  {name = 'Gameful Software Ltd', homepage = 'https://www.gameful.dev/'}
+]
