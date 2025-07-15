@@ -2,6 +2,7 @@
   "htmlElements": {
     "tags": [
       "a",
+      "aside",
       "body",
       "div",
       "footer",
@@ -9,6 +10,7 @@
       "h2",
       "head",
       "header",
+      "hr",
       "html",
       "img",
       "li",
@@ -26,7 +28,8 @@
       "active",
       "ancestor",
       "bg-black",
-      "bg-cyan-200"
+      "bg-cyan-200",
+      "p-4"
     ],
     "ids": null
   }
