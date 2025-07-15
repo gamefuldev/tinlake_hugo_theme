@@ -1,2 +1,11 @@
 @import "tailwindcss";
 @source "hugo_stats.json";
+
+@theme {
+  --color-tl-background: #121413;
+  --color-tl-lime: #dfff38;
+  --color-tl-teal: #194141;
+  --color-tl-grey-1: #282A27;
+  --color-tl-grey-2: #A0A1A1;
+  --color-tl-grey-3: #545957;
+}

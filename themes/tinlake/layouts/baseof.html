@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}" class="bg-black">
 <head>
   {{ partial "head.html" . }}
 </head>
-<body>
-  <header>
+<body class="bg-tl-background text-white">
+  <header class="max-w-screen-xl m-auto">
     {{ partial "header.html" . }}
   </header>
   <main>
     {{ block "main" . }}{{ end }}
   </main>
-  <footer>
+  <footer class="max-w-screen-xl m-auto">
     {{ partial "footer.html" . }}
   </footer>
+  {{ partialCached "head/js.html" . }}
 </body>
 </html>
