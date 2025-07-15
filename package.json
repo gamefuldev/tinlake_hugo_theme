@@ -1,0 +1,15 @@
+{
+  "name": "tinlake",
+  "version": "1.0.0",
+  "description": "Hugo powered custom site for Tinlake",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jared Rigby",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}
