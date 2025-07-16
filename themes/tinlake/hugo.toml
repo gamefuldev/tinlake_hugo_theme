@@ -26,3 +26,46 @@ title = 'Tinlake'
     name = 'Get a quote'
     pageRef = '/get-a-quote'
     weight = 5
+
+  [[menus.footer_company]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 1
+  [[menus.footer_company]]
+    name = 'Blog'
+    pageRef = '/blog'
+    weight = 2
+  [[menus.footer_company]]
+    name = 'Contact'
+    pageRef = '/contact'
+    weight = 3
+  
+  [[menus.footer_quick]]
+    name = 'Service'
+    pageRef = '/about'
+    weight = 1
+  [[menus.footer_quick]]
+    name = 'About'
+    pageRef = '/blog'
+    weight = 2
+  [[menus.footer_quick]]
+    name = 'Blog'
+    pageRef = '/contact'
+    weight = 3
+  [[menus.footer_quick]]
+    name = 'Pricing'
+    pageRef = '/pricing'
+    weight = 4
+  
+  [[menus.footer_legal]]
+    name = 'Cookie Policy'
+    pageRef = '/cookies'
+    weight = 1
+  [[menus.footer_legal]]
+    name = 'Privacy Policy'
+    pageRef = '/privacy'
+    weight = 2
+  [[menus.footer_legal]]
+    name = 'Terms of Service'
+    pageRef = '/tos'
+    weight = 3

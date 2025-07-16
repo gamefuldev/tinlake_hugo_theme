@@ -10,8 +10,10 @@
   <main>
     {{ block "main" . }}{{ end }}
   </main>
-  <footer class="max-w-screen-xl m-auto">
-    {{ partial "footer.html" . }}
+  <footer class="bg-black">
+    <div class="max-w-screen-xl m-auto">
+      {{ partial "footer.html" . }}
+    </div>
   </footer>
   {{ partialCached "head/js.html" . }}
 </body>

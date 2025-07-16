@@ -1,11 +1,11 @@
-<div class="p-8 flex gap-8 items-center justify-between">
+<div class="p-4 flex gap-8 items-center justify-between">
   <a href="{{ .Site.BaseURL }}" class="relative z-20">
     <img src="{{.Site.Params.identity.logo}}" alt="logo" >
   </a>
   <nav class="js-menu-container fixed lg:static opacity-0 lg:opacity-100 top-0 left-0 overflow-hidden max-h-screen translate-x-full lg:translate-x-0 transition-all duration-500 text-center w-full h-full bg-black lg:bg-transparent flex items-center justify-center lg:justify-end">
     <ul class="flex flex-col lg:flex-row gap-8 lg:gap-16">
       {{ range .Site.Menus.main }}
-        <li class="text-white uppercase last:text-tl-lime font-semibold text-lg">
+        <li class="text-white uppercase last:text-tl-lime font-semibold">
           <a href="{{ .URL }}">{{ .Name }}</a>
         </li>
       {{ end }}
