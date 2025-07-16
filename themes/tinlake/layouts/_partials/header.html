@@ -1,8 +1,8 @@
 <div class="p-4 flex gap-8 items-center justify-between">
-  <a href="{{ .Site.BaseURL }}" class="relative z-20">
-    <img src="{{.Site.Params.identity.logo}}" alt="logo" >
+  <a href="{{ .Site.BaseURL }}" class="relative z-50">
+    <img src="/{{.Site.Params.identity.logo}}" alt="logo" >
   </a>
-  <nav class="js-menu-container fixed lg:static opacity-0 lg:opacity-100 top-0 left-0 overflow-hidden max-h-screen translate-x-full lg:translate-x-0 transition-all duration-500 text-center w-full h-full bg-black lg:bg-transparent flex items-center justify-center lg:justify-end">
+  <nav class="js-menu-container fixed z-40 lg:static opacity-0 lg:opacity-100 top-0 left-0 overflow-hidden max-h-screen translate-x-full lg:translate-x-0 transition-all duration-500 text-center w-full h-full bg-black lg:bg-transparent flex items-center justify-center lg:justify-end">
     <ul class="flex flex-col lg:flex-row gap-8 lg:gap-16">
       {{ range .Site.Menus.main }}
         <li class="text-white uppercase last:text-tl-lime font-semibold">
@@ -11,7 +11,7 @@
       {{ end }}
     </ul>
   </nav>
-  <button class="js-menu-button relative z-20 w-12 h-12 flex items-center justify-center rounded-full bg-tl-lime lg:hidden">
+  <button class="js-menu-button relative z-50 w-12 h-12 flex items-center justify-center rounded-full bg-tl-lime lg:hidden">
     <div class="js-menu-button-open">
       {{- $svg := resources.Get "icons/menu-icon.svg" -}}
         {{- if $svg -}}
