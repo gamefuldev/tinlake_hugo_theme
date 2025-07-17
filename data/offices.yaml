@@ -1,0 +1,28 @@
+- name: Dover, USA
+  address: 8 The Green, Dover, DE 19901, USA
+  lat: 39.156545
+  long: -75.524188
+  phone: +1 (814) 300-8240
+  email: info@tinlake.com
+  emoji: 🇺🇸
+- name: Paris, FR
+  address: 8 The Green, Dover, DE 19901, USA
+  lat: 48.85889
+  long: 2.320041
+  phone: +1 (814) 300-8240
+  email: info@tinlake.com
+  emoji: 🇫🇷
+- name: Hamburg, DE
+  lat: 53.550341
+  long: 10.000654
+  address: 8 The Green, Dover, DE 19901, USA
+  phone: +1 (814) 300-8240
+  email: info@tinlake.com
+  emoji: 🇩🇪
+- name: Melbourne, AUS
+  lat: -37.8142454
+  long: 144.9631732
+  address: 8 The Green, Dover, DE 19901, USA
+  phone: +1 (814) 300-8240
+  email: info@tinlake.com
+  emoji: 🇦🇺

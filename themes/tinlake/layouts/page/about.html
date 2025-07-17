@@ -1,10 +1,11 @@
 {{ define "main" }}
   <div class="content p-4">
-    <h1>{{ .Title }}</h1>
+    
     {{ partial "values.html" . }}
 
     {{ .Content }}
 
+    {{ partial "clients.html" . }}
     {{ partial "team.html" . }}
   </div>
 {{ end }}

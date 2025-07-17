@@ -1,0 +1,11 @@
+<section class="relative z-10 mb-32">
+  <h2 class="uppercase text-3xl font-semibold mb-24 mt-24 text-center"><span class="opacity-60">Our</span> clients</h2>
+  <div class="overflow-x-scroll w-full">
+    <div class="flex flex-row gap-8 items-center justify-center min-w-max">
+      {{ range .Site.Data.clients }}
+        {{ $img := resources.Get (printf "images/clients/%s" .logo) }}
+        <img class="h-auto w-30 py-8" src="{{ $img.RelPermalink }}" alt="{{ .name }}">
+      {{ end }}
+    </div>
+  </div>
+</section>

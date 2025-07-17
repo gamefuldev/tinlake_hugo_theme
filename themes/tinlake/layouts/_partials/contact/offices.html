@@ -1,0 +1,10 @@
+<div class="p-8 bg-black/60 rounded-xl rounded-tr-none">
+  {{ range .Site.Data.offices }}
+    <div class="mb-8 last:mb-0">
+      <div class="flex gap-3 items-center">{{ .emoji }} <span class="uppercase opacity-60 text-sm font-semibold">{{ .name }}</span></div>
+      <div>{{ .address }}</div>
+      <a class="block" href="mailto:{{ .email }}">{{ .email }}</a>
+      <a class="block" href="tel:{{ .phone }}">{{ .phone }}</a>
+    </div>
+  {{ end }}
+</div>

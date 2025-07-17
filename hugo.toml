@@ -1,6 +1,6 @@
-baseURL = ''
+baseURL = '/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Tinlake Hugo Theme'
 theme = 'tinlake'
 
 [build]

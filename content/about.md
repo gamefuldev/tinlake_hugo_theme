@@ -4,6 +4,8 @@ layout: "about"
 
 headline: We create digital ideas that are bigger, bolder, braver and better
 subheading: We provide consulting services in the area of IFRS and management reporting, helping companies to reach their highest level. We optimize business processes, making them easier.
+
+featured_image_1: 
 ---
 
 ## Microservices can result in higher complexity and slower development
