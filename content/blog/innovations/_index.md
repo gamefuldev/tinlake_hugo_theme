@@ -1,4 +1,3 @@
 ---
 title: "Innovation"
-layout: "blog"
 ---

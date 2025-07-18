@@ -7,13 +7,10 @@
   <div class="flex flex-wrap my-16 mx-4">
     {{ $pages := "" }}
     {{ if .IsHome }}
-      {{/* This shouldn't happen on this template, but as a fallback */}}
       {{ $pages = where site.RegularPages "Type" "blog" }}
     {{ else if eq .Kind "section" }}
-      {{/* This is a section page like /research/. Get all pages in this section and its subsections. */}}
       {{ $pages = where site.RegularPages "Section" .Section }}
     {{ else if eq .Kind "taxonomy" }}
-      {{/* This is a taxonomy term page like /research/ai/. Get pages for this term. */}}
       {{ $pages = .Pages }}
     {{ end }}
 
@@ -31,7 +28,7 @@
         <div class="w-full md:w-5/12 relative overflow-hidden rounded-tl-xl aspect-square">
           <a href=" {{ .Permalink }}">
             {{ with .Params.image }}
-              {{ $img := resources.Get (printf "images/research/%s" .) }}
+              {{ $img := resources.Get (printf "images/blog/%s" .) }}
                 <img class="absolute top-0 left-0 w-full h-full object-cover" src="{{ $img.RelPermalink }}" alt="{{ $.LinkTitle }}">
             {{ end }}
           </a>

@@ -1,4 +1,3 @@
 ---
 title: "Cybersecurity"
-layout: "blog"
 ---

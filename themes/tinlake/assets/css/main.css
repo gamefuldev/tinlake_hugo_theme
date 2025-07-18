@@ -62,3 +62,7 @@ body.blog {
 .prose h1, h2, h3, h4, h5, h6 {
   @apply text-white;
 }
+
+.prose blockquote {
+  @apply text-tl-lime border-2 border-x-0 border-white px-0 not-italic my-16;
+}

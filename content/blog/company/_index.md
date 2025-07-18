@@ -1,4 +1,3 @@
 ---
 title: "Company"
-layout: "blog"
 ---
