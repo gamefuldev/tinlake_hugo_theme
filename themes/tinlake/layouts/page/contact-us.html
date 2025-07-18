@@ -1,5 +1,42 @@
 {{ define "main" }}
-  <div class="content p-4">
+  <div class="p-4">
+    <h1 class="text-center uppercase text-4xl font-bold my-24">{{ .Title }}</h1>
+    <nav class="mt-8 mb-16">
+      <ul class="flex gap-4 mt-2 justify-center">
+        <li>
+          <a class="w-10 h-10 flex items-center justify-center border-2 border-tl-grey-1/10 rounded-full hover:border-tl-lime/50" href="#facebook">
+            {{- $facebook := resources.Get "icons/socials/facebook.svg" -}}
+              {{- if $facebook -}}
+                {{ $facebook.Content | safeHTML }}
+              {{- end -}}
+          </a>
+        </li>
+        <li>
+          <a class="w-10 h-10 flex items-center justify-center border-2 border-tl-grey-1/10 rounded-full hover:border-tl-lime/50" href="#instagram">
+            {{- $instagram := resources.Get "icons/socials/instagram.svg" -}}
+              {{- if $instagram -}}
+                {{ $instagram.Content | safeHTML }}
+              {{- end -}}
+          </a>
+        </li>
+        <li>
+          <a class="w-10 h-10 flex items-center justify-center border-2 border-tl-grey-1/10 rounded-full hover:border-tl-lime/50" href="#x">
+            {{- $x := resources.Get "icons/socials/x.svg" -}}
+              {{- if $x -}}
+                {{ $x.Content | safeHTML }}
+              {{- end -}}
+          </a>
+        </li>
+        <li>
+          <a class="w-10 h-10 flex items-center justify-center border-2 border-tl-grey-1/10 rounded-full hover:border-tl-lime/50" href="#linkedin">
+            {{- $linkedin := resources.Get "icons/socials/linkedin.svg" -}}
+              {{- if $linkedin -}}
+                {{ $linkedin.Content | safeHTML }}
+              {{- end -}}
+          </a>
+        </li>
+      </ul>
+    </nav>
     <div class="flex flex-col lg:flex-row gap-4 mb-4">
       <div class="w-full lg:w-1/3">
         {{ partial "contact/offices.html" . }}

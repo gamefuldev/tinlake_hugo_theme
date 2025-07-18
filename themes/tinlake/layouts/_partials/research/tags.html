@@ -1,0 +1,17 @@
+<div class="w-full">
+  <div class="flex justify-center gap-8 items-center">
+    <div class="border-b-1 border-white/30 grow"></div>
+    <div class="text-center uppercase text-white opacity-60 whitespace-nowrap">Tags</div>
+    <div class="border-b-1 border-white/30 grow"></div>
+  </div>
+  <div class="flex flex-wrap justify-center gap-2 mt-4 mb-4">
+    {{ $researchDir := "content/research" }}
+    {{ $subdirs := readDir $researchDir }}
+    <a href="/research/" class="uppercase text-white hover:text-tl-grey-1 py-1 px-4 rounded-full text-sm font-semibold bg-tl-grey-2/20 hover:bg-tl-lime">all</a>
+    {{ range $subdirs }}
+      {{ if .IsDir }}
+        <a href="/research/{{ .Name | urlize }}" class="uppercase text-white hover:text-tl-grey-1 py-1 px-4 rounded-full text-sm font-semibold bg-tl-grey-2/20 hover:bg-tl-lime">{{ .Name }}</a>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>

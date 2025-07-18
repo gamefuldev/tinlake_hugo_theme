@@ -24,7 +24,7 @@ title = 'Tinlake'
     weight = 4
   [[menus.main]]
     name = 'Get a quote'
-    pageRef = '/get-a-quote'
+    pageRef = '/contact-us'
     weight = 5
 
   [[menus.footer_company]]

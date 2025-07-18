@@ -1,0 +1,59 @@
+{{ define "main" }}
+  <div class="p-4">
+    <h1 class="text-center uppercase text-4xl font-bold my-24">{{ .Title }}</h1>
+    {{ partial "blog/tags.html" . }}
+  </div>
+
+  <div class="flex flex-wrap my-16 mx-4">
+    {{ $pages := "" }}
+    {{ if .IsHome }}
+      {{/* This shouldn't happen on this template, but as a fallback */}}
+      {{ $pages = where site.RegularPages "Type" "blog" }}
+    {{ else if eq .Kind "section" }}
+      {{/* This is a section page like /research/. Get all pages in this section and its subsections. */}}
+      {{ $pages = where site.RegularPages "Section" .Section }}
+    {{ else if eq .Kind "taxonomy" }}
+      {{/* This is a taxonomy term page like /research/ai/. Get pages for this term. */}}
+      {{ $pages = .Pages }}
+    {{ end }}
+
+    {{ $paginator := .Paginate $pages.ByTitle 4 }}
+
+    {{ range $paginator.Pages }}
+
+      <div class="
+        flex flex-col md:flex-row w-full lg:w-1/2
+        pt-8 lg:first:pt-0 lg:nth-2:pt-0 pb-8 
+        lg:odd:pr-8 lg:even:pl-8
+        lg:border-b border-white/30 lg:odd:border-r 
+        last:border-b-0 nth-last-2:border-b-0
+      ">
+        <div class="w-full md:w-5/12 relative overflow-hidden rounded-tl-xl aspect-square">
+          <a href=" {{ .Permalink }}">
+            {{ with .Params.image }}
+              {{ $img := resources.Get (printf "images/research/%s" .) }}
+                <img class="absolute top-0 left-0 w-full h-full object-cover" src="{{ $img.RelPermalink }}" alt="{{ $.LinkTitle }}">
+            {{ end }}
+          </a>
+        </div>
+        <div class="w-full md:w-7/12 flex flex-col gap-2 items-start py-4 md:py-0 px-0 md:px-8">
+          <h2 class="font-semibold uppercase text-xl">
+            <a href=" {{ .Permalink }}">{{ .LinkTitle }}</a>
+          </h2>
+          <p class="grow opacity-60 text-sm">{{ .Params.excerpt }}</p>
+          
+          {{ $t := .Params.date }}
+          {{ $t = time.AsTime $t }}
+          {{ $format := "January 2, 2006" }}
+
+          <p class="opacity-30">{{ $t.Format $format }}</p>
+        </div>        
+      </div>
+      
+    {{ end }}
+    
+  </div>
+
+  {{ partial "pagination.html" . }}
+
+{{ end }}

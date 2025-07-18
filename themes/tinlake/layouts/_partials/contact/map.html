@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-<div id="js-map" class="rounded-xl rounded-tr-none overflow absolute top-0 left-0 w-full h-full [&>.leaflet-tile-pane]:grayscale"></div>
+<div id="js-map" class="rounded-xl rounded-tr-none overflow-hidden w-full h-96 lg:h-full lg:absolute top-0 left-0 [&_.leaflet-tile-pane]:grayscale [&_.leaflet-tile-pane]:brightness-50 mb-16 lg:mb-0"></div>
 
 <script>
   const map = L.map('js-map').setView([30, 25], 2);

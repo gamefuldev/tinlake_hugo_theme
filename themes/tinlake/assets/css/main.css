@@ -9,3 +9,47 @@
   --color-tl-grey-2: #A0A1A1;
   --color-tl-grey-3: #545957;
 }
+
+body.About {
+  background-image: url(/green-blur-top.svg), url(/green-blur-right.svg), url(/blue-blur-left.svg);
+  background-position: top center, right bottom, top left;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+body.Contact {
+  background-image: url(/green-blur-top.svg), url(/green-blur-right.svg);
+  background-position: top center, right bottom;
+  background-repeat: no-repeat, no-repeat;
+}
+
+body.research {
+  background-image: url(/green-blur-top.svg);
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+body.blog {
+  background-image: url(/blue-blur-top.svg);
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.pagination {
+  @apply flex flex-wrap gap-2 justify-center py-16;
+}
+
+.pagination .page-item {
+  @apply first:hidden last:hidden;
+}
+
+.pagination .page-item.disabled .page-link {
+  @apply opacity-50 pointer-events-none;
+}
+
+.pagination .page-item.active .page-link {
+  @apply text-tl-grey-1 bg-tl-lime;
+}
+
+.pagination .page-link {
+  @apply inline-block text-white hover:text-tl-grey-1 bg-tl-grey-2/20 hover:bg-tl-lime uppercase font-semibold rounded-full py-1 px-4;
+}

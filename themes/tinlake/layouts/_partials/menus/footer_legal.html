@@ -1,0 +1,9 @@
+<nav class="mb-4 text-sm">
+  <ul class="flex gap-4 flex-wrap">
+    {{ range .Site.Menus.footer_legal }}
+      <li>
+        <a class="opacity-30 hover:opacity-60" href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+    {{ end }}
+  </ul>
+</nav>

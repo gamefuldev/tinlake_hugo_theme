@@ -1,74 +1,20 @@
 <div class="p-4">
   <div class="flex flex-col lg:flex-row lg:justify-between gap-8">
-    <nav class="mt-8 lg:w-full">
-      <p class="opacity-30 text-sm">Company</p>
-      <ul class="flex gap-4 mt-4">
-        {{ range .Site.Menus.footer_company }}
-          <li>
-            <a class="uppercase font-semibold" href="{{ .URL }}">{{ .Name }}</a>
-          </li>
-        {{ end }}
-      </ul>
-    </nav>
-
-    <nav class="mt-8 lg:w-full">
-      <p class="opacity-30 text-sm">Quick links</p>
-      <ul class="flex gap-4 mt-4">
-        {{ range .Site.Menus.footer_quick }}
-          <li>
-            <a class="uppercase font-semibold" href="{{ .URL }}">{{ .Name }}</a>
-          </li>
-        {{ end }}
-      </ul>
-    </nav>
-
-    <nav class="mt-8 lg:w-full">
-      <p class="opacity-30 text-sm">Follow us</p>
-      <ul class="flex gap-4 mt-2">
-        <li>
-          <a class="w-10 h-10 flex items-center justify-center border-2 border-tl-grey-1/50 rounded-full hover:border-tl-lime/50" href="#facebook">
-            {{- $facebook := resources.Get "icons/socials/facebook.svg" -}}
-              {{- if $facebook -}}
-                {{ $facebook.Content | safeHTML }}
-              {{- end -}}
-          </a>
-        </li>
-        <li>
-          <a class="w-10 h-10 flex items-center justify-center border-2 border-tl-grey-1/50 rounded-full hover:border-tl-lime/50" href="#instagram">
-            {{- $instagram := resources.Get "icons/socials/instagram.svg" -}}
-              {{- if $instagram -}}
-                {{ $instagram.Content | safeHTML }}
-              {{- end -}}
-          </a>
-        </li>
-        <li>
-          <a class="w-10 h-10 flex items-center justify-center border-2 border-tl-grey-1/50 rounded-full hover:border-tl-lime/50" href="#x">
-            {{- $x := resources.Get "icons/socials/x.svg" -}}
-              {{- if $x -}}
-                {{ $x.Content | safeHTML }}
-              {{- end -}}
-          </a>
-        </li>
-        <li>
-          <a class="w-10 h-10 flex items-center justify-center border-2 border-tl-grey-1/50 rounded-full hover:border-tl-lime/50" href="#linkedin">
-            {{- $linkedin := resources.Get "icons/socials/linkedin.svg" -}}
-              {{- if $linkedin -}}
-                {{ $linkedin.Content | safeHTML }}
-              {{- end -}}
-          </a>
-        </li>
-      </ul>
-    </nav>
+    
+    {{ partial "menus/footer_company.html" . }}
+    {{ partial "menus/footer_quick_links.html" . }}
+    {{ partial "menus/footer_social.html" . }}
 
     <aside class="mt-8 uppercase font-semibold lg:w-full lg:text-right leading-8">
       <div class="flex gap-8">
-        <a href="mailto:info@tinlake.com">info@tinlake.com</a>
-        <a class="whitespace-nowrap" href="tel:+1 (814) 300-8240">+1 (814) 300-8240</a>
+        <a class="hover:text-tl-lime" href="mailto:info@tinlake.com">info@tinlake.com</a>
+        <a class="whitespace-nowrap hover:text-tl-lime" href="tel:+1 (814) 300-8240">+1 (814) 300-8240</a>
       </div>
       <div>
-        <a href="https://www.google.com/maps/place/8+The+Green,+Dover,+DE+19901,+USA/@39.155824,-75.5270666,17z/data=!3m1!4b1!4m6!3m5!1s0x89c764aa7c225e51:0x923f74929919960!8m2!3d39.155824!4d-75.5244917!16s%2Fg%2F11xn4gb7t0?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D">8 The Green, Dover, DE 19901, USA</a>
+        8 The Green, Dover, DE 19901, USA
       </div>
     </aside>
+
   </div>
   
   <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center border-t-1 border-tl-grey-1 mt-8 pt-10 mb-8">
@@ -78,15 +24,7 @@
       </a>
     </div>
 
-    <nav class="mb-4 text-sm">
-      <ul class="flex gap-4 flex-wrap">
-        {{ range .Site.Menus.footer_legal }}
-          <li>
-            <a class="opacity-30 hover:opacity-60" href="{{ .URL }}">{{ .Name }}</a>
-          </li>
-        {{ end }}
-      </ul>
-    </nav>
+    {{ partial "menus/footer_legal.html" . }}
 
     <div class="opacity-30 text-sm mb-4">Copyright &copy; 2025 Tinlake Inc.</div>
   </div>  

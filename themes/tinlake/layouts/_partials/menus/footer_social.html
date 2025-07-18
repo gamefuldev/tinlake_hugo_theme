@@ -1,0 +1,37 @@
+<nav class="mt-8 lg:w-full">
+  <p class="opacity-30 text-sm">Follow us</p>
+  <ul class="flex gap-4 mt-2">
+    <li>
+      <a class="w-10 h-10 flex items-center justify-center border-2 border-tl-grey-1/50 rounded-full hover:border-tl-lime/50" href="#facebook">
+        {{- $facebook := resources.Get "icons/socials/facebook.svg" -}}
+          {{- if $facebook -}}
+            {{ $facebook.Content | safeHTML }}
+          {{- end -}}
+      </a>
+    </li>
+    <li>
+      <a class="w-10 h-10 flex items-center justify-center border-2 border-tl-grey-1/50 rounded-full hover:border-tl-lime/50" href="#instagram">
+        {{- $instagram := resources.Get "icons/socials/instagram.svg" -}}
+          {{- if $instagram -}}
+            {{ $instagram.Content | safeHTML }}
+          {{- end -}}
+      </a>
+    </li>
+    <li>
+      <a class="w-10 h-10 flex items-center justify-center border-2 border-tl-grey-1/50 rounded-full hover:border-tl-lime/50" href="#x">
+        {{- $x := resources.Get "icons/socials/x.svg" -}}
+          {{- if $x -}}
+            {{ $x.Content | safeHTML }}
+          {{- end -}}
+      </a>
+    </li>
+    <li>
+      <a class="w-10 h-10 flex items-center justify-center border-2 border-tl-grey-1/50 rounded-full hover:border-tl-lime/50" href="#linkedin">
+        {{- $linkedin := resources.Get "icons/socials/linkedin.svg" -}}
+          {{- if $linkedin -}}
+            {{ $linkedin.Content | safeHTML }}
+          {{- end -}}
+      </a>
+    </li>
+  </ul>
+</nav>

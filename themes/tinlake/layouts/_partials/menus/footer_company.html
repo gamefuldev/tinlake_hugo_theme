@@ -1,0 +1,10 @@
+<nav class="mt-8 lg:w-full">
+  <p class="opacity-30 text-sm">Company</p>
+  <ul class="flex gap-4 mt-4">
+    {{ range .Site.Menus.footer_company }}
+      <li>
+        <a class="uppercase font-semibold underline-offset-4 decoration-tl-lime hover:underline" href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+    {{ end }}
+  </ul>
+</nav>

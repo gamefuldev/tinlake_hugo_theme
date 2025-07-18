@@ -6,7 +6,7 @@
     <ul class="flex flex-col lg:flex-row gap-8 lg:gap-16">
       {{ range .Site.Menus.main }}
         <li class="text-white uppercase last:text-tl-lime font-semibold">
-          <a href="{{ .URL }}">{{ .Name }}</a>
+          <a class="underline-offset-4 decoration-tl-lime hover:underline" href="{{ .URL }}">{{ .Name }}</a>
         </li>
       {{ end }}
     </ul>
