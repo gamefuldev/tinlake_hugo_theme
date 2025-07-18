@@ -3,12 +3,18 @@
   <div class="p-4">
     <div class="border-b-1 border-white/30 flex flex-col lg:flex-row gap-8 lg:gap-24">
       <div class="flex flex-col lg:flex-row w-full lg:w-1/2 relative lg:items-center">
-        <div class="lg:flex gap-4 lg:absolute top-0 left-0">
+        <div class="lg:flex gap-4 lg:absolute top-0 left-0 items-center">
+          {{ with .Parent }}
+            {{ if not .IsHome }}
+              <a href="{{ .RelPermalink }}" class="px-4 py-2 text-tl-grey-1 hover:text-white bg-tl-lime hover:bg-tl-teal rounded-full uppercase font-semibold text-sm">{{ .Title }}</a>
+            {{ end }}
+          {{ end }}
+
           {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
           {{ $dateHuman := .Date | time.Format ":date_long" }}
-          <time class="text-white/60 text-sm mb-4" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+          <time class="text-white/60 text-sm" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
         </div>
-        <h1 class="uppercase font-semibold text-xl lg:text-4xl">{{ .Title }}</h1>
+        <h1 class="uppercase font-semibold text-2xl lg:text-4xl my-8">{{ .Title }}</h1>
       </div>
       <div class="w-full lg:w-1/2">
         {{ with .Params.image }}
@@ -32,7 +38,7 @@
           {{ $recent := first 5 (sort (where $allResearch "Permalink" "ne" .Permalink) "Date" "desc") }}
           {{ range $recent }}
             {{ $page := . }}
-            <li class="py-4 border-b-1 last:border-0 border-white/60 flex gap-6 items-center">
+            <li class="py-4 border-b-1 last:border-0 border-white/30 flex gap-6 items-center">
               {{ with $page.Params.image }}
                 {{ $img := resources.Get (printf "images/blog/%s" .) }}
                 <a class="rounded-tl-lg aspect-square relative overflow-hidden w-20" href="{{ $page.RelPermalink }}">
