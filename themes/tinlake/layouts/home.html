@@ -1,7 +1,6 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+  {{ partial "home/hero.html"}}
+  {{ partial "home/transformations.html" . }}
+  {{ partial "home/total_solution.html" . }}
+  {{ partial "home/latest_posts.html" . }}
 {{ end }}

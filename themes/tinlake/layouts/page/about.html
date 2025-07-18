@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <div class="p-4">
+  <div class="max-w-screen-xl mx-auto p-4">
 
     <h1 class="text-center text-2xl lg:text-5xl lg:leading-16 font-bold text-white uppercase mx-auto max-w-3xl mt-16 mb-8">{{ .Params.headline }}</h1>
     <p class="text-center mx-auto max-w-xl opacity-60 mb-8">{{ .Params.subheading }}</p>
@@ -21,7 +21,7 @@
         <img class="absolute top-0 left-0 w-full h-full object-cover" src="{{ $img3.RelPermalink }}" alt="">
       </div>
 
-      <img class="absolute top-0 md:top-8 left-4 md:left-0 w-20 md:w-48 h-auto" src="/gradient-arrow.svg" alt="">
+      <img class="absolute top-0 md:top-8 left-4 md:left-0 w-20 md:w-48 h-auto z-20" src="/gradient-arrow.svg" alt="">
       
       <img class="absolute bottom-4 right-8 w-20 h-auto lg:w-40" src="/gradient-stars.svg" alt="">
     </div>

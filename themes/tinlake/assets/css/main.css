@@ -2,6 +2,30 @@
 @plugin "@tailwindcss/typography";
 @source "hugo_stats.json";
 
+@font-face {  
+  font-family: "Stolzl"; 
+  font-style: normal;  
+  font-weight: 400;  
+  font-display: swap;  
+  src: url("/fonts/stolzl/stolzl_regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Stolzl"; 
+  font-style: normal;  
+  font-weight: 600;  
+  font-display: swap;  
+  src: url("/fonts/stolzl/stolzl_medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Stolzl"; 
+  font-style: normal;  
+  font-weight: 700;  
+  font-display: swap;  
+  src: url("/fonts/stolzl/stolzl_bold.otf") format("opentype");
+}
+
 @theme {
   --color-tl-background: #121413;
   --color-tl-lime: #dfff38;
@@ -9,6 +33,11 @@
   --color-tl-grey-1: #282A27;
   --color-tl-grey-2: #A0A1A1;
   --color-tl-grey-3: #545957;
+  --font-stolzl: "Stolzl", sans-serif;
+}
+
+body {
+  @apply font-stolzl;
 }
 
 body.About {
@@ -32,6 +61,24 @@ body.research {
 body.blog {
   background-image: url(/blue-blur-top.svg);
   background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.transformations {
+  background-image: url(/green-blur-top.svg), url(/blue-blur-left.svg);
+  background-position: top right, left center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.solution {
+  background-image: url(/blue-blur-top.svg), url(/green-blur-right.svg);
+  background-position: top left, right center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.solution-overview {
+  background-image: url(/concentric-circles.svg);
+  background-position: center;
   background-repeat: no-repeat;
 }
 

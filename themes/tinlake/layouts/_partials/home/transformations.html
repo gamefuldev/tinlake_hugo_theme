@@ -1,0 +1,30 @@
+<div class="transformations pb-96">
+  <div class="p-4 max-w-screen-xl mx-auto">
+    <h2 class="uppercase font-semibold text-2xl lg:text-4xl max-w-xl my-16"><span class="opacity-30">Top-notch</span> technology transformations</h2>
+    <div class="flex flex-wrap pb-16">
+      {{ $counter := 1}}
+      {{ range .Site.Data.transformations }}
+        <div class="w-1/2 lg:w-1/6 flex flex-col odd:pr-4 even:pl-4 odd:border-r-1 py-4 border-b-1 last:border-b-0 nth-last-2:border-b-0 lg:!border-b-0 lg:border-r-1 lg:px-4 lg:last:border-r-0 border-white/30">
+          <div class="text-tl-lime text-5xl font-bold mb-16 lg:mb-32">{{ $counter }}</div>
+          <div>
+            <p class="uppercase font-semibold lg:text-xl mb-2">{{ .title }}</p>
+            <p class="opacity-60">{{ .content }}</p>
+          </div>
+          {{ $counter = add $counter 1}}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+<div class="assist border-t-1 border-white/30 -mt-96">
+  <div class="p-4 max-w-screen-xl mx-auto relative pt-24 pb-48 md:pb-72 lg:pb-96">
+    <div class="relative z-20">
+      <h2 class="uppercase font-semibold text-2xl lg:text-4xl max-w-xl mt-16 mb-12 mx-auto text-center">We assist public sector organizations in leveraging <span class="opacity-30">technology</span></h2>
+      <p class="text-center text-white/60 mx-auto max-w-lg my-12">Organizations should choose Tinlake for their deep and integrated expertise from seasoned professionals, their specific focus on the public sector, and their commitment to ethical and responsible innovation.</p>
+      <div class="text-center">
+        <a class="mb-8 inline-block px-4 py-2 text-tl-grey-1 hover:text-white bg-tl-lime hover:bg-tl-teal rounded-full uppercase font-semibold text-sm" href="/contact-us/">Get started</a>
+      </div>
+    </div>
+    <img class="absolute bottom-0 left-0 w-full h-auto" src="/map.png" alt="">
+  </div>
+</div>
