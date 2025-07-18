@@ -1,13 +1,37 @@
 {{ define "main" }}
   <div class="content p-4">
 
-    <h1 class="text-center text-5xl leading-16 font-bold text-white uppercase mx-auto max-w-3xl mt-16 mb-8">{{ .Params.headline }}</h1>
+    <h1 class="text-center text-2xl lg:text-5xl lg:leading-16 font-bold text-white uppercase mx-auto max-w-3xl mt-16 mb-8">{{ .Params.headline }}</h1>
     <p class="text-center mx-auto max-w-xl opacity-60 mb-8">{{ .Params.subheading }}</p>
+
+    <div class="flex items-center justify-center relative">
+      <div class="aspect-video relative rounded-t-xl overflow-hidden w-full max-w-[50rem] my-24 mx-8 z-10">
+        {{ $img1 := resources.Get "images/about/feature_1.jpg" }}
+        <img class="absolute top-0 left-0 w-full h-full object-cover" src="{{ $img1.RelPermalink }}" alt="">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-tl-lime to-50% to-transparent"></div>
+      </div>
+
+      <div class="aspect-square absolute bottom-8 -left-16 lg:left-8 rounded-lg overflow-hidden w-32 lg:w-56 z-20">
+        {{ $img2 := resources.Get "images/about/feature_2.jpg" }}
+        <img class="absolute top-0 left-0 w-full h-full object-cover" src="{{ $img2.RelPermalink }}" alt="">
+      </div>
+
+      <div class="aspect-square absolute top-0 lg:top-48 -right-8 lg:-right-16 rounded-lg overflow-hidden w-32 lg:w-56 z-20">
+        {{ $img3 := resources.Get "images/about/feature_3.jpg" }}
+        <img class="absolute top-0 left-0 w-full h-full object-cover" src="{{ $img3.RelPermalink }}" alt="">
+      </div>
+
+      <img class="absolute top-0 md:top-8 left-4 md:left-0 w-20 md:w-48 h-auto" src="/gradient-arrow.svg" alt="">
+      
+      <img class="absolute bottom-4 right-8 w-20 h-auto lg:w-40" src="/gradient-stars.svg" alt="">
+    </div>
     
     {{ partial "values.html" . }}
 
-    {{ .Content }}
-
+    <div class="prose mx-auto lg:prose-xl my-32">
+      {{ .Content }}
+    </div>
+    
     {{ partial "clients.html" . }}
     {{ partial "team.html" . }}
   </div>

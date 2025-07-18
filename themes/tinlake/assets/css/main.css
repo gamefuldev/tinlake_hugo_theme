@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @source "hugo_stats.json";
 
 @theme {
@@ -52,4 +53,12 @@ body.blog {
 
 .pagination .page-link {
   @apply inline-block text-white hover:text-tl-grey-1 bg-tl-grey-2/20 hover:bg-tl-lime uppercase font-semibold rounded-full py-1 px-4;
+}
+
+.prose {
+  @apply text-white;
+}
+
+.prose h1, h2, h3, h4, h5, h6 {
+  @apply text-white;
 }
