@@ -1,16 +1,22 @@
 {{ define "main" }}
   <div class="max-w-screen-xl mx-auto p-4">
     <h1 class="text-center uppercase text-4xl font-bold my-24">{{ .Title }}</h1>
+    
     {{ partial "blog/tags.html" . }}
 
     <div class="flex flex-wrap my-16">
     {{ $pages := "" }}
-    {{ if .IsHome }}
+    {{ if .IsSection }}
+      {{ if .Parent.IsHome }}
+        {{/* This is the top-level blog section (/blog/) - list all blog posts */}}
+        {{ $pages = where site.RegularPages "Type" "blog" }}
+      {{ else }}
+        {{/* This is a subsection like /blog/ai/ - list posts in this section */}}
+        {{ $pages = .Pages }}
+      {{ end }}
+    {{ else }}
+      {{/* Fallback for other page kinds */}}
       {{ $pages = where site.RegularPages "Type" "blog" }}
-    {{ else if eq .Kind "section" }}
-      {{ $pages = where site.RegularPages "Section" .Section }}
-    {{ else if eq .Kind "taxonomy" }}
-      {{ $pages = .Pages }}
     {{ end }}
 
     {{ $paginator := .Paginate $pages.ByTitle 4 }}
