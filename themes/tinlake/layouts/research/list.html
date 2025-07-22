@@ -5,21 +5,23 @@
     {{ partial "research/tags.html" . }}
 
     <div class="flex flex-wrap my-16">
-      {{ $pages := "" }}
-      {{ if .IsHome }}
-        {{/* This shouldn't happen on this template, but as a fallback */}}
+    {{ $pages := "" }}
+    {{ if .IsSection }}
+      {{ if .Parent.IsHome }}
+        {{/* This is the top-level blog section (/research/) - list all blog posts */}}
         {{ $pages = where site.RegularPages "Type" "research" }}
-      {{ else if eq .Kind "section" }}
-        {{/* This is a section page like /research/. Get all pages in this section and its subsections. */}}
-        {{ $pages = where site.RegularPages "Section" .Section }}
-      {{ else if eq .Kind "taxonomy" }}
-        {{/* This is a taxonomy term page like /research/ai/. Get pages for this term. */}}
+      {{ else }}
+        {{/* This is a subsection like /research/ai/ - list posts in this section */}}
         {{ $pages = .Pages }}
       {{ end }}
+    {{ else }}
+      {{/* Fallback for other page kinds */}}
+      {{ $pages = where site.RegularPages "Type" "research" }}
+    {{ end }}
 
-      {{ $paginator := .Paginate $pages.ByTitle 4 }}
+    {{ $paginator := .Paginate $pages.ByTitle 4 }}
 
-      {{ range $paginator.Pages }}
+    {{ range $paginator.Pages }}
 
         <div class="
           flex flex-col md:flex-row w-full lg:w-1/2
